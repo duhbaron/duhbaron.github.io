@@ -1,22 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Awesome Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Precision Aviation Detailing</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #f8f8f8;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
       color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      height: 60vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+    }
+    .service-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex: 1 1 250px;
+    }
+    .service-box h3 {
+      margin-top: 0;
+    }
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    a {
+      color: #4fc3f7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Website!</h1>
-  <p>This site is live on GitHub Pages with a custom domain!</p>
+
+  <header>
+    <h1>Precision Aviation Detailing</h1>
+    <p>Exceeding standards in aircraft cleaning and care</p>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>At Precision Aviation Detailing, we specialize in the professional cleaning, polishing, and preservation of private and commercial aircraft. With a focus on safety, quality, and attention to detail, we help ensure your aircraft looks as exceptional as it performs.</p>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Exterior Wash</h3>
+        <p>Thorough hand wash and wax using aviation-safe products to maintain appearance and aerodynamics.</p>
+      </div>
+      <div class="service-box">
+        <h3>Interior Detailing</h3>
+        <p>Complete cabin cleaning: leather conditioning, carpet shampooing, disinfection, and cockpit detailing.</p>
+      </div>
+      <div class="service-box">
+        <h3>Paint Protection</h3>
+        <p>Protect your aircraft’s paint with sealants and coatings that guard against UV and weather exposure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>📞 Call us: <a href="tel:1234567890">(123) 456-7890</a></p>
+    <p>📧 Email: <a href="mailto:info@youraviationdetailing.com">info@youraviationdetailing.com</a></p>
+    <p>✈️ Serving private, corporate, and charter aircraft across [Your Region]</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Precision Aviation Detailing. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
