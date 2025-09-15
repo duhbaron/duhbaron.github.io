@@ -40,3 +40,154 @@
       padding: 0 20px;
     }
     header h1 {
+      font-size: 3.8rem;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+    header p {
+      margin-top: 15px;
+      font-size: 1.4rem;
+      max-width: 600px;
+      font-weight: 400;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      border-bottom: 4px solid #0077cc;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      color: #004a99;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* Services Grid */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .service-card {
+      background: white;
+      flex: 1 1 280px;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .service-card h3 {
+      margin-top: 0;
+      color: #005a99;
+      font-size: 1.4rem;
+    }
+    .service-card p {
+      margin-top: 10px;
+      font-weight: 400;
+      color: #555;
+    }
+
+    /* Contact */
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 8px 0;
+    }
+    .contact-info a {
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004a99;
+      color: #eee;
+      text-align: center;
+      padding: 18px 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.8rem;
+        letter-spacing: 1.5px;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+      .services {
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AeroLux Jet Detailing</h1>
+    <p>Professional Jet Detailing Services for Private and Corporate Aircraft</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>
+        At AeroLux, we specialize in premium detailing services tailored exclusively for jets. Our expert technicians use aviation-approved products and meticulous techniques to maintain your aircraft’s pristine appearance, ensuring it looks impeccable both inside and out.
+      </p>
+    </section>
+
+    <section>
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Exterior Jet Wash & Wax</h3>
+          <p>Hand wash with aviation-safe detergents and high-quality wax to protect your jet’s finish from the elements and UV damage.</p>
+        </div>
+        <div class="service-card">
+          <h3>Interior Cabin Detailing</h3>
+          <p>Comprehensive cleaning including leather conditioning, carpet shampoo, and thorough cockpit and passenger area care.</p>
+        </div>
+        <div class="service-card">
+          <h3>Paint Protection & Coatings</h3>
+          <p>Application of advanced paint sealants and ceramic coatings designed for long-lasting protection against weathering and contaminants.</p>
+        </div>
+        <div class="service-card">
+          <h3>Engine & Landing Gear Cleaning</h3>
+          <p>Specialized cleaning protocols for critical jet components, ensuring safety and performance while maintaining a polished look.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p>📞 Phone: <a href="tel:+6785490938">(678) 549-0938</a></p>
+        <p>📧 Email: <a href="mailto:contact@aeroluxaviationusa.com">contact@aeroluxaviationusa.com</a></p>
+        <p>📍 Serving private and corporate jets nationwide</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AeroLux Jet Detailing. All rights reserved.</p>
+  </footer>
+</body>
+</html>
