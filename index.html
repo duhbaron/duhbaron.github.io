@@ -3,261 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AeroLux Aviation</title>
+  <title>AeroLux Aviation | Premium Aircraft Detailing</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      font-family: 'Arial', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    /* Background */
-    body {
-      background: url("A_high-resolution_photograph_showcases_the_interio.png") no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      color: white;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body, html{font-family:'Segoe UI',sans-serif;scroll-behavior:smooth;}
 
     /* Navbar */
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 15px 25px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position:fixed;top:0;width:100%;display:flex;
+      justify-content:space-between;align-items:center;
+      padding:15px 40px;background:rgba(0,0,0,0.7);z-index:1000;
     }
+    .logo {color:#f0c75e;font-size:1.6rem;font-weight:bold;letter-spacing:2px;text-transform:uppercase;}
+    nav ul {list-style:none;display:flex;gap:25px;}
+    nav a {color:white;text-decoration:none;font-weight:500;transition:0.3s;}
+    nav a:hover {color:#f0c75e;}
 
-    nav h1 {
-      font-size: 1.5rem;
-      color: #f0c75e;
+    /* Hero */
+    .hero {
+      height:100vh;display:flex;flex-direction:column;
+      justify-content:center;align-items:center;text-align:center;
+      padding:0 20px;
+      background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+                 url("your-background.jpg") no-repeat center/cover;
+      color:white;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+    .hero h1 {font-size:3.8rem;letter-spacing:3px;text-transform:uppercase;}
+    .hero p {margin-top:15px;font-size:1.2rem;color:#f0c75e;max-width:700px;}
+    .cta-btn {
+      margin-top:30px;background:#f0c75e;color:#111;padding:15px 35px;
+      font-size:1.1rem;font-weight:bold;border-radius:8px;
+      text-decoration:none;transition:0.3s;
     }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    nav ul li a:hover {
-      color: #f0c75e;
-    }
+    .cta-btn:hover {background:#d9a94f;}
 
     /* Sections */
-    header {
-      text-align: center;
-      padding: 60px 20px;
+    section {padding:80px 20px;}
+    .why, .testimonials {background:#f9f9f9;text-align:center;}
+    .why h2, .services h2, .testimonials h2, .contact h2, .gallery h2, .logos h2 {
+      font-size:2.5rem;color:#222;margin-bottom:30px;text-transform:uppercase;text-align:center;
     }
+    .why ul {list-style:disc inside;max-width:800px;margin:0 auto;text-align:left;color:#444;font-size:1rem;line-height:1.6;}
 
-    header h2 {
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    /* Services */
+    .services .grid {
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;
     }
+    .card {
+      background:white;border-radius:12px;padding:30px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.1);transition:transform .3s;
+    }
+    .card:hover {transform:translateY(-8px);}
+    .card h3 {color:#f0c75e;margin-bottom:15px;}
+    .card p {color:#555;line-height:1.6;}
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-
-    section {
-      margin: 40px auto;
-      max-width: 800px;
-      text-align: center;
-      padding: 20px;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #f0c75e;
-    }
-
-    section p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #f5f5f5;
-    }
+    /* Testimonials */
+    .testimonial {max-width:700px;margin:20px auto;font-style:italic;color:#666;}
 
     /* Contact */
-    .contact {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 12px;
+    .contact form {max-width:600px;margin:0 auto;text-align:left;}
+    label{display:block;margin-bottom:6px;font-weight:bold;color:#444;}
+    input, textarea {
+      width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;margin-bottom:20px;
+      font-size:1rem;background:#fff;color:#111;
+    }
+    input:focus, textarea:focus {outline:2px solid #f0c75e;}
+    button {
+      background:#f0c75e;color:#111;padding:15px 32px;font-size:1.1rem;
+      font-weight:bold;border:none;border-radius:8px;cursor:pointer;
+      transition:0.3s;width:100%;
+    }
+    button:hover {background:#d9a94f;}
+
+    /* Logo Carousel */
+    .logos {background:#fff;}
+    .logo-track {
+      display:flex;overflow:hidden;gap:60px;animation:scroll 20s linear infinite;
+    }
+    .logo-track img {height:60px;filter:grayscale(100%);opacity:0.8;transition:0.3s;}
+    .logo-track img:hover {filter:grayscale(0%);opacity:1;}
+    @keyframes scroll {
+      0% {transform:translateX(0);}
+      100% {transform:translateX(-50%);}
     }
 
-    .contact p {
-      font-size: 1.1rem;
-      margin: 8px 0;
+    /* Before/After Gallery */
+    .gallery {background:#f9f9f9;text-align:center;}
+    .before-after {
+      position:relative;max-width:800px;margin:0 auto;overflow:hidden;
+    }
+    .before-after img {width:100%;display:block;}
+    .slider {
+      position:absolute;top:0;left:50%;width:3px;height:100%;background:#f0c75e;cursor:ew-resize;
     }
 
-    a {
-      color: #f0c75e;
-      text-decoration: none;
-    }
+    /* Footer */
+    footer {background:#111;color:#aaa;text-align:center;padding:20px;font-size:0.9rem;}
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Quote Form */
-    .quote {
-      background: rgba(240, 199, 94, 0.9); /* Golden semi-transparent */
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 600px;
-      margin: 40px auto;
-      color: #000;
-    }
-
-    .quote h2 {
-      color: #000;
-      margin-bottom: 15px;
-    }
-
-    .quote form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .quote input, .quote textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    .quote button {
-      background: #000;
-      color: #f0c75e;
-      border: none;
-      padding: 12px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .quote button:hover {
-      background: #222;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        display: none;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      nav button {
-        display: block;
-      }
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      display: none;
-      cursor: pointer;
+    @media(max-width:768px){
+      .hero h1{font-size:2.8rem;}
+      .hero p{font-size:1rem;}
+      nav ul{flex-direction:column;gap:15px;}
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <!-- Navigation -->
-    <nav>
-      <h1>AeroLux</h1>
-      <button id="menu-toggle">☰</button>
-      <ul id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#interior">Interior</a></li>
-        <li><a href="#exterior">Exterior</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#quote">Get a Quote</a></li>
-      </ul>
-    </nav>
 
-    <!-- Hero -->
-    <header id="home">
-      <h2>AeroLux Aviation</h2>
-      <p>Luxury Aircraft Detailing & Care</p>
-    </header>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">AeroLux Aviation</div>
+    <ul>
+      <li><a href="#why">Why Choose Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Before/After</a></li>
+      <li><a href="#contact">Request a Quote</a></li>
+    </ul>
+  </nav>
 
-    <!-- Interior -->
-    <section id="interior">
-      <h2>Interior Detailing</h2>
-      <p>
-        From leather seat conditioning and carpet shampooing to cockpit and cabin sanitization,  
-        we restore your aircraft’s interior to pristine luxury.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Luxury Aircraft Detailing</h1>
+    <p>Precision interior and exterior detailing tailored for private jets — runway ready, always.</p>
+    <a href="#contact" class="cta-btn">Request a Quote</a>
+  </section>
 
-    <!-- Exterior -->
-    <section id="exterior">
-      <h2>Exterior Detailing</h2>
-      <p>
-        Our services include exterior washes, paint polishing, waxing, and brightwork restoration.  
-        Your aircraft will shine on the runway while maintaining its integrity.
-      </p>
-    </section>
+  <!-- Why Choose Us -->
+  <section id="why" class="why">
+    <h2>Why Choose AeroLux Aviation</h2>
+    <ul>
+      <li>24/7 aircraft detailing services in Atlanta and regional hubs</li>
+      <li>Backed by aviation-grade safety protocols and certified team</li>
+      <li>Customized interior and exterior care for every aircraft model</li>
+      <li>Trusted by leading private jet owners and operators</li>
+    </ul>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:info@aeroluxaviation.com">info@aeroluxaviation.com</a></p>
-      <p>Phone: <a href="tel:+15555555555">(555) 555-5555</a></p>
-    </section>
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Interior Detailing</h3>
+        <p>Leather conditioning, upholstery deep-cleaning, cabin sanitization, cockpit detailing.</p>
+      </div>
+      <div class="card">
+        <h3>Exterior Detailing</h3>
+        <p>Wash, polish, wax, bug/tar removal, paint protection, brightwork polishing.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Quote -->
-    <section id="quote" class="quote">
-      <h2>Request a Quote</h2>
-      <form>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <textarea rows="4" placeholder="Tell us about your aircraft & services needed..." required></textarea>
-        <button type="submit">Submit Request</button>
-      </form>
-    </section>
-  </div>
+  <!-- Logo Carousel -->
+  <section class="logos">
+    <h2>Trusted By</h2>
+    <div class="logo-track">
+      <img src="logo1.png" alt="Client 1">
+      <img src="logo2.png" alt="Client 2">
+      <img src="logo3.png" alt="Client 3">
+      <img src="logo4.png" alt="Client 4">
+      <img src="logo5.png" alt="Client 5">
+    </div>
+  </section>
 
+  <!-- Before/After Gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Before & After</h2>
+    <div class="before-after">
+      <img src="before.jpg" alt="Before">
+      <img src="after.jpg" alt="After" style="position:absolute;top:0;left:0;width:50%;overflow:hidden;">
+      <div class="slider"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      “AeroLux Aviation delivered exceptional results. Our jet looked brand new again!” — Private Jet Owner
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Request a Quote</h2>
+    <form action="#" method="POST">
+      <label for="name">Full Name</label><input type="text" id="name" name="name" required>
+      <label for="email">Email Address</label><input type="email" id="email" name="email" required>
+      <label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" required>
+      <label for="aircraft">Aircraft Type / Model</label><input type="text" id="aircraft" name="aircraft">
+      <label for="message">Details of Request</label><textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
+
+  <footer>&copy; 2025 AeroLux Aviation. All Rights Reserved.</footer>
+
+  <!-- Before/After Slider Script -->
   <script>
-    // Mobile menu toggle
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+    const container = document.querySelector('.before-after');
+    const afterImg = container.querySelector('img:nth-child(2)');
+    const slider = container.querySelector('.slider');
+
+    container.addEventListener('mousemove', e => {
+      const rect = container.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      if(x < 0) x = 0;
+      if(x > rect.width) x = rect.width;
+      afterImg.style.width = x + 'px';
+      slider.style.left = x + 'px';
     });
   </script>
 </body>
 </html>
+
