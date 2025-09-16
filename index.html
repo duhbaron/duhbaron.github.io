@@ -21,7 +21,7 @@
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                  url("https://chatgpt.com/s/m_68c8d6b59f1c8191b10ba2fe42788b14") no-repeat center center/cover;
+                  url("A_high-resolution_photograph_showcases_the_interio.png") no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -124,6 +124,7 @@
       background: #111;
       color: white;
       padding: 60px 20px;
+      border-radius: 12px;
     }
 
     .contact h2 {
@@ -137,6 +138,51 @@
 
     .contact a:hover {
       text-decoration: underline;
+    }
+
+    /* Quote form */
+    form {
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    form input:focus, form textarea:focus {
+      outline: 2px solid #f0c75e;
+    }
+
+    form button {
+      background: #f0c75e;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: block;
+      margin: auto;
+    }
+
+    form button:hover {
+      background: #d9a94f;
     }
 
     /* Footer */
@@ -199,9 +245,29 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:contact@aeroluxaviation.com">contact@aeroluxaviation.com</a></p>
-    <p>Phone: <a href="tel:+6785490938">(678) 549-0938</a></p>
+    <p>Email: <a href="mailto:info@aeroluxaviation.com">info@aeroluxaviation.com</a></p>
+    <p>Phone: <a href="tel:+15555555555">(555) 555-5555</a></p>
     <p>Based in Atlanta, GA</p>
+
+    <!-- Request a Quote Form -->
+    <form action="#" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="aircraft">Aircraft Type</label>
+      <input type="text" id="aircraft" name="aircraft">
+
+      <label for="message">Message / Service Request</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Request a Quote</button>
+    </form>
   </section>
 
   <!-- Footer -->
@@ -210,4 +276,3 @@
   </footer>
 </body>
 </html>
-
