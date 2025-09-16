@@ -17,10 +17,48 @@
       scroll-behavior: smooth;
     }
 
-    /* Background hero */
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f0c75e;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f0c75e;
+    }
+
+    /* Hero Section */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
                   url("A_high-resolution_photograph_showcases_the_interio.png") no-repeat center center/cover;
       display: flex;
       flex-direction: column;
@@ -32,247 +70,65 @@
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
 
     .hero p {
       margin-top: 15px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #f0c75e;
+      max-width: 700px;
     }
 
-    /* Navigation bar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.85);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #f0c75e;
-    }
-
-    /* Section styling */
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2.5rem;
-      color: #222;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-    }
-
-    section p {
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    /* Service cards */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card h3 {
-      color: #f0c75e;
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      color: #555;
-    }
-
-    /* Contact */
-    .contact {
-      background: #111;
-      color: white;
-      padding: 60px 20px;
-      border-radius: 12px;
-    }
-
-    .contact h2 {
-      color: #f0c75e;
-    }
-
-    .contact a {
-      color: #f0c75e;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
-    /* Quote form */
-    form {
+    .hero .cta-btn {
       margin-top: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    form input:focus, form textarea:focus {
-      outline: 2px solid #f0c75e;
-    }
-
-    form button {
       background: #f0c75e;
-      border: none;
-      padding: 14px 28px;
+      color: #111;
+      padding: 14px 32px;
+      border-radius: 8px;
       font-size: 1.1rem;
       font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
+      text-decoration: none;
       transition: background 0.3s ease;
-      display: block;
-      margin: auto;
     }
 
-    form button:hover {
+    .hero .cta-btn:hover {
       background: #d9a94f;
-    }
-
-    /* Footer */
-    footer {
-      background: #000;
-      color: #aaa;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
       .hero p {
         font-size: 1rem;
-      }
-      nav {
-        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <div class="logo">AeroLux Aviation</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#quote">Request a Quote</a></li>
+    </ul>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>AeroLux Aviation</h1>
-    <p>Luxury Aircraft Detailing & Care</p>
+    <h1>Luxury Aircraft Detailing</h1>
+    <p>Delivering premium interior & exterior detailing services to keep your aircraft pristine, polished, and runway ready.</p>
+    <a href="#quote" class="cta-btn">Request a Quote</a>
   </section>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Interior Detailing</h3>
-        <p>
-          From leather seat conditioning, carpet shampooing, and stain removal 
-          to cockpit and cabin sanitization, we bring luxury back to your aircraft’s interior.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Exterior Detailing</h3>
-        <p>
-          Professional exterior washes, polishing, waxing, and brightwork care. 
-          We ensure your aircraft shines on the runway while maintaining surface protection.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@aeroluxaviation.com">info@aeroluxaviation.com</a></p>
-    <p>Phone: <a href="tel:+15555555555">(555) 555-5555</a></p>
-    <p>Based in Atlanta, GA</p>
-
-    <!-- Request a Quote Form -->
-    <form action="#" method="POST">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
-
-      <label for="aircraft">Aircraft Type</label>
-      <input type="text" id="aircraft" name="aircraft">
-
-      <label for="message">Message / Service Request</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Request a Quote</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 AeroLux Aviation. All rights reserved.</p>
-  </footer>
 </body>
 </html>
