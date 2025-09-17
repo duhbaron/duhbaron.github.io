@@ -86,17 +86,18 @@
 }
 
 .logo-track img {
-  height: 110px;            /* Larger size */
-  max-width: 240px;         /* Wider support for long logos */
+  height: 270px;            /* 3x bigger than 90px */
+  max-width: 600px;         /* supports wider logos */
   object-fit: contain;
-  filter: none;             /* REMOVE grayscale */
-  opacity: 1;               /* Full visibility */
+  filter: none;             /* Keep logos in full color */
+  opacity: 1;
   transition: transform 0.3s ease;
 }
 
 .logo-track img:hover {
-  transform: scale(1.05);   /* Subtle grow on hover */
+  transform: scale(1.05);   /* Optional subtle zoom */
 }
+
 
 
 
