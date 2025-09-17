@@ -78,13 +78,24 @@
     /* Logo Carousel */
     .logos {background:#fff;}
     .logo-track {
-      display:flex;overflow:hidden;gap:60px;animation:scroll 20s linear infinite;
+  display: flex;
+  justify-content: center; /* Center logos */
+  flex-wrap: wrap;         /* Allow logos to wrap on smaller screens */
+  gap: 60px;
+  padding: 40px 20px;
+}
+
     }
-    .logo-track img {height:60px;filter:grayscale(100%);opacity:0.8;transition:0.3s;}
-    .logo-track img:hover {filter:grayscale(0%);opacity:1;}
-    @keyframes scroll {
-      0% {transform:translateX(0);}
-      100% {transform:translateX(-50%);}
+  .logo-track img {
+  height: 100px; /* Increased from 60px */
+  max-width: 180px;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.logo-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
     }
 
     /* Before/After Gallery */
