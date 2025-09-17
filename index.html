@@ -77,26 +77,28 @@
 
     /* Logo Carousel */
     .logos {background:#fff;}
-    .logo-track {
+.logo-track {
   display: flex;
-  justify-content: center; /* Center logos */
-  flex-wrap: wrap;         /* Allow logos to wrap on smaller screens */
-  gap: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
   padding: 40px 20px;
 }
 
-    }
-  .logo-track img {
-  height: 100px; /* Increased from 60px */
-  max-width: 180px;
+.logo-track img {
+  height: 70px;
+  max-width: 160px;
+  object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.9;
+  opacity: 0.85;
   transition: 0.3s;
 }
+
 .logo-track img:hover {
   filter: grayscale(0%);
   opacity: 1;
-    }
+}
+
 
     /* Before/After Gallery */
     .gallery {background:#f9f9f9;text-align:center;}
