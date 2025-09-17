@@ -86,18 +86,18 @@
 }
 
 .logo-track img {
-  height: 90px;              /* Increased size */
-  max-width: 200px;          /* Wider if needed */
+  height: 110px;            /* Larger size */
+  max-width: 240px;         /* Wider support for long logos */
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.9;
-  transition: 0.3s;
+  filter: none;             /* REMOVE grayscale */
+  opacity: 1;               /* Full visibility */
+  transition: transform 0.3s ease;
 }
 
 .logo-track img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+  transform: scale(1.05);   /* Subtle grow on hover */
 }
+
 
 
 
@@ -190,7 +190,7 @@
   <section class="testimonials">
     <h2>What Our Clients Say</h2>
     <div class="testimonial">
-      “AeroLux Aviation delivered exceptional results. Our jet looked brand new again!” — Private Jet Owner
+      “AeroLux Aviation delivered exceptional results. Our jet looked brand new again!” — A Delta Pilot
     </div>
   </section>
 
