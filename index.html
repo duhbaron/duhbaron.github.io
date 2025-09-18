@@ -422,12 +422,15 @@ nav .logo {
       navLinks.classList.toggle('active');
     });
 
-    // Close mobile menu when any nav link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
+   document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    // Only close menu if it's open AND screen width is less than 769px (mobile)
+    if (window.innerWidth < 769 && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+});
+
   </script>
 </body>
 </html>
