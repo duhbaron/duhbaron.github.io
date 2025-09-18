@@ -397,22 +397,38 @@ nav .logo {
       slider.style.left = x + 'px';
     });
   </script>
+   <!-- Before/After Slider Script -->
   <script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+    const container = document.querySelector('.before-after');
+    const afterImg = container.querySelector('img:nth-child(2)');
+    const slider = container.querySelector('.slider');
 
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    // Close mobile menu when a nav link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
-});
+    container.addEventListener('mousemove', e => {
+      const rect = container.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      if(x < 0) x = 0;
+      if(x > rect.width) x = rect.width;
+      afterImg.style.width = x + 'px';
+      slider.style.left = x + 'px';
+    });
+  </script>
 
-  });
-</script>
+  <!-- Mobile Nav Toggle Script -->
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when any nav link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
 
