@@ -139,6 +139,29 @@ nav .logo {
 .contact-details a:hover {
   color: #d9a94f;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 12px;
+}
+
+.nav-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f0c75e;
+  font-family: 'Segoe UI', sans-serif;
+  white-space: nowrap;
+}
 
 
 
@@ -169,10 +192,10 @@ nav .logo {
 
   <!-- Navbar -->
   <nav>
-   <a href="#" class="logo">
-  <img src="https://i.postimg.cc/g0J8wPNK/Aerolux-logo.png" alt="AeroLux Aviation Logo">
+  <a href="#" class="logo-container">
+  <img src="https://i.postimg.cc/g0J8wPNK/Aerolux-logo.png" alt="AeroLux Logo" class="nav-logo">
+  <span class="logo-text">AeroLux Aviation</span>
 </a>
-
 
     <ul>
       <li><a href="#why">Why Choose Us</a></li>
