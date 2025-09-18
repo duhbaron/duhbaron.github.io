@@ -397,6 +397,15 @@ nav .logo {
       slider.style.left = x + 'px';
     });
   </script>
+  <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
 
