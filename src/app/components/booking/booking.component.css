@@ -59,3 +59,10 @@ section { background: var(--off-white); }
 @media (max-width: 900px) {
   .booking-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  .booking-grid { grid-template-columns: 1fr; gap: 32px; }
+  .booking-form { padding: 24px 20px; }
+  .booking-features { margin-top: 20px; gap: 16px; }
+  .feature-item { padding: 16px; }
+}

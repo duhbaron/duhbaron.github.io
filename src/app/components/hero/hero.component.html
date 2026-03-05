@@ -8,6 +8,11 @@
         Precision Detailing for<br>
         <strong>Every Aircraft</strong>
       </h1>
+      <div class="weather-bar" *ngIf="weather">
+  <span class="weather-icon">{{ weather.icon }}</span>
+  <span class="weather-info">{{ weather.temp }}°F · {{ weather.desc | titlecase }} · Wind {{ weather.wind }} mph</span>
+  <span class="weather-status">{{ weather.detailing }}</span>
+</div>
       <p class="hero-sub">
         From private jets to commercial fleets, Aerolux Aviation delivers meticulous
         aviation detailing that protects your investment, enhances appearance, and
@@ -30,6 +35,9 @@
             <div class="hero-card-title">Our Services</div>
             <div class="hero-card-sub">Premium aviation care</div>
           </div>
+        </div>
+        <div class="pilot-badge">
+        ✈ Active Certified Pilot on Our Team
         </div>
         <ul class="service-list">
           <li *ngFor="let s of services">

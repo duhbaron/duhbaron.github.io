@@ -48,3 +48,10 @@ section { background: var(--off-white); }
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-form { padding: 24px 20px; }
+  .contact-info { gap: 20px; }
+  .contact-icon { width: 42px; height: 42px; font-size: 18px; }
+}

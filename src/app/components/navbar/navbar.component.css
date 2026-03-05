@@ -114,3 +114,13 @@ nav {
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1rem; }
 }
+
+@media (max-width: 768px) {
+  nav { padding: 0 4%; height: 64px; }
+  .nav-logo-icon { width: 52px; height: 52px; }
+  .nav-logo-text { font-size: 1rem; }
+  .nav-links {
+    top: 64px;
+    padding: 20px 4%;
+  }
+}

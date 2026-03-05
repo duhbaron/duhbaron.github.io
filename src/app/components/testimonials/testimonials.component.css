@@ -68,3 +68,9 @@ section .section-sub { color: rgba(255,255,255,0.6); }
 @media (max-width: 900px) {
   .testimonials-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+  .testimonial-card { padding: 24px 20px; }
+  .testimonial-text { font-size: 0.9rem; }
+}

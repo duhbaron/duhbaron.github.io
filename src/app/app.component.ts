@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { BookingComponent } from './components/booking/booking.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
-import { TestimonialsComponent } from './components/testimonials/testimonials.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -13,23 +9,15 @@ import { FooterComponent } from './components/footer/footer.component';
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     NavbarComponent,
-    HeroComponent,
-    BookingComponent,
-    GalleryComponent,
-    TestimonialsComponent,
-    ContactComponent,
     FooterComponent
   ],
   template: `
     <app-navbar></app-navbar>
     <div class="scroll-progress"><div class="scroll-progress-bar" [style.width.%]="scrollPercent"></div></div>
     <main>
-      <app-hero></app-hero>
-      <app-booking></app-booking>
-      <app-gallery></app-gallery>
-      <app-testimonials></app-testimonials>
-      <app-contact></app-contact>
+      <router-outlet></router-outlet>
     </main>
     <app-footer></app-footer>
     <div class="notification" [class.show]="notifVisible">
