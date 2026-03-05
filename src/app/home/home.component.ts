@@ -5,6 +5,8 @@ import { BookingComponent } from '../components/booking/booking.component';
 import { GalleryComponent } from '../components/gallery/gallery.component';
 import { TestimonialsComponent } from '../components/testimonials/testimonials.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { TrustComponent } from '../components/trust/trust.component';
+import { FaqComponent } from '../components/faq/faq.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,14 +16,18 @@ import { ContactComponent } from '../components/contact/contact.component';
     BookingComponent,
     GalleryComponent,
     TestimonialsComponent,
-    ContactComponent
+    FaqComponent,
+    ContactComponent,
+    TrustComponent
   ],
   template: `
     <app-hero></app-hero>
+    <app-trust></app-trust>
     <app-booking></app-booking>
     <app-gallery></app-gallery>
     <app-testimonials></app-testimonials>
     <app-contact></app-contact>
+    <app-faq></app-faq>
   `
 })
 export class HomeComponent {}

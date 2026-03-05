@@ -213,7 +213,37 @@ export class BlogComponent {
       `,
       date: 'March 4, 2026',
       readTime: '5 min read'
-    }
+    },
+    
+    {
+  id: 8,
+  slug: 'waterless-aircraft-detailing-future',
+  category: 'Aircraft Care Tips',
+  title: 'Why Waterless Aircraft Detailing is the Future',
+  excerpt: 'Eco-friendly dry wash is changing the way aircraft owners maintain their planes — no water, no runoff, and stunning results.',
+  content: `
+    As environmental regulations tighten and more hangars restrict water runoff, waterless aircraft detailing has emerged as one of the most practical and effective ways to keep your aircraft looking its best. At Aerolux Aviation, our signature Eco-Friendly Dry Wash process is designed for aircraft owners who demand results without compromise.
+
+    **What is Waterless Dry Wash?**
+    Waterless or dry wash detailing uses specially formulated aviation-safe products that encapsulate dirt, soot, and carbon buildup and lift it safely off the surface without the need for water. The result is a clean, polished aircraft with zero water runoff.
+
+    **Why It Matters at Regulated Airports**
+    Many airports and hangars — particularly those in EPA-regulated zones or strict FBO facilities — prohibit water washing on the ramp or inside hangars due to runoff regulations. Our dry wash process is fully compliant with these restrictions, meaning we can detail your aircraft anywhere, anytime.
+
+    **The Environmental Benefit**
+    A traditional aircraft wash can use hundreds of gallons of water, much of which carries contaminants like fuel residue, oil, and cleaning chemicals into storm drains. Our waterless process eliminates this entirely, making it the responsible choice for environmentally conscious aircraft owners.
+
+    **Does it Work as Well?**
+    Absolutely. Our dry wash process removes soot, carbon buildup, exhaust staining, and general grime just as effectively as a traditional wash — often better, because our products are specifically designed to bond with and lift aviation-specific contaminants.
+
+    **Who is it For?**
+    Eco-Friendly Dry Wash is ideal for aircraft based at strict hangars, owners who detail frequently and want a faster process, environmentally conscious pilots, and anyone in a water-restricted facility.
+
+    Contact Aerolux Aviation today to schedule your waterless detail and experience the difference.
+  `,
+  date: 'March 5, 2026',
+  readTime: '4 min read'
+}
   ];
 
   openPost(post: BlogPost): void {

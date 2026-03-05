@@ -1,0 +1,16 @@
+<section id="trust">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">Built on <strong>Trust & Standards</strong></h2>
+      <p class="section-sub">We hold ourselves to the highest standards in aviation detailing so you can focus on flying.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card" *ngFor="let badge of badges">
+        <div class="trust-icon">{{ badge.icon }}</div>
+        <h3 class="trust-title">{{ badge.title }}</h3>
+        <p class="trust-desc">{{ badge.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>

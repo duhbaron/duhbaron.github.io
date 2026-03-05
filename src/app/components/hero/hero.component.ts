@@ -16,7 +16,8 @@ export class HeroComponent {
     'Exterior Detail & Polish',
     'Interior Deep Clean & CockPit Detail',
     'Windshield & Lens Treatment',
-    'Corrosion Prevention'
+    'Corrosion Prevention',
+    'Eco-Friendly Dry Wash'
   ];
 
   constructor() {

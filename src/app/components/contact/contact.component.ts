@@ -19,13 +19,14 @@ export class ContactComponent {
   contactItems = [
     { icon: '📞', title: 'Phone',        lines: ['(678) 549-0938', 'Mon–Sun, 24/7 Service'] },
     { icon: '✉️', title: 'Email',        lines: ['contact@aeroluxaviationusa.com', '2-hour response guarantee'] },
-    { icon: '📍', title: 'Service Area', lines: ['We travel to airports/FBOs within Atlanta Region.', 'Long-distance trips available on request.'] },
+    { icon: '📍', title: 'Service Area', lines: ['LZU, PDK, FTY, RYY, GVL', 'And surrounding Atlanta metro airports'] },
     { icon: '✈',  title: 'Base Airport', lines: ['LZU — Regional Executive Airport'] }
   ];
 
   services = [
     'Exterior Detail & Polish',
     'Interior Deep Clean',
+    'Eco-Friendly Dry Wash',
     'Ceramic Coating',
     'Full Detail Package',
     'Fleet Services'

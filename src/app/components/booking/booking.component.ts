@@ -41,6 +41,7 @@ export class BookingComponent {
     'Signature — Full Exterior Detail',
     'Elite — Full Interior & Exterior',
     'Guardian — Paint Protection Film',
+    'Eco — Waterless Dry Wash',
     'Custom — Build My Package'
   ];
 
