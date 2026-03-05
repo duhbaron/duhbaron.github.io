@@ -121,13 +121,9 @@ export class BlogComponent {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  scrollTo(id: string): void {
-    this.closePost();
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }
+ scrollTo(id: string): void {
+  window.location.href = '/#' + id;
+}
 
   formatParagraph(text: string): string {
     return text
