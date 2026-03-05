@@ -10,6 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactComponent {
   submitted = false;
+   isMobile = false;
+
+  constructor() {
+    this.isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
 
   contactItems = [
     { icon: '📞', title: 'Phone',        lines: ['(678) 549-0938', 'Mon–Sun, 24/7 Service'] },

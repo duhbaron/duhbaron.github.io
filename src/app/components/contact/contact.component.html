@@ -13,7 +13,15 @@
             <div class="contact-icon">{{ item.icon }}</div>
             <div>
               <h4>{{ item.title }}</h4>
-              <p *ngFor="let line of item.lines">{{ line }}</p>
+       <p *ngFor="let line of item.lines">
+  <a *ngIf="item.title === 'Phone' && !line.includes('Mon')" 
+     href="tel:+16785490938" 
+     style="color:inherit;text-decoration:none;"
+     [style.pointer-events]="isMobile ? 'auto' : 'none'"
+     [style.cursor]="isMobile ? 'pointer' : 'text'">{{ line }}</a>
+  <span *ngIf="item.title === 'Phone' && line.includes('Mon')">{{ line }}</span>
+  <span *ngIf="item.title !== 'Phone'">{{ line }}</span>
+</p>
             </div>
           </div>
         </div>

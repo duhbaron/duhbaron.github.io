@@ -41,8 +41,17 @@ export class NavbarComponent implements OnInit {
   }
 
   scrollTo(id: string): void {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.pathname === '/blog') {
+      window.location.href = '/#' + id;
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+    this.closeMenu();
+  }
+
+  goToBlog(): void {
+    window.location.href = '/blog';
     this.closeMenu();
   }
 }

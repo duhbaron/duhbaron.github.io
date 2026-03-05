@@ -11,7 +11,7 @@
     <li><a [class.active]="activeSection === 'booking'" (click)="scrollTo('booking')">Book Service</a></li>
     <li><a [class.active]="activeSection === 'gallery'" (click)="scrollTo('gallery')">Gallery</a></li>
     <li><a [class.active]="activeSection === 'testimonials'" (click)="scrollTo('testimonials')">Reviews</a></li>
-    <li><a routerLink="/blog">Blog</a></li>
+    <li><a (click)="goToBlog()">Blog</a></li>
     <li><a class="nav-cta" (click)="scrollTo('contact')">Get a Quote</a></li>
   </ul>
 
