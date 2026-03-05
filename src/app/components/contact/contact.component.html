@@ -1,0 +1,62 @@
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div>
+        <div class="section-header">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title">Request a <strong>Custom Quote</strong></h2>
+          <p class="section-sub">Every aircraft is different. Tell us about yours and we'll build a package that fits your needs and budget.</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item" *ngFor="let item of contactItems">
+            <div class="contact-icon">{{ item.icon }}</div>
+            <div>
+              <h4>{{ item.title }}</h4>
+              <p *ngFor="let line of item.lines">{{ line }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title">Get a Free Quote</div>
+        <div class="form-sub">No obligation. We'll send a detailed estimate within 24 hours.</div>
+
+        <form action="https://formspree.io/f/xkgvlbjr" method="POST" (submit)="onSubmit($event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" name="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Aircraft Make & Model *</label>
+            <input type="text" name="aircraft" placeholder="e.g. Cessna Citation CJ4" required />
+          </div>
+          <div class="form-group">
+            <label>Services Interested In</label>
+            <select name="service">
+              <option value="">Select a service…</option>
+              <option *ngFor="let s of services" [value]="s">{{ s }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Us More</label>
+            <textarea name="message" placeholder="Aircraft condition, tail number, location, timeline…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">✦ Request My Free Quote</button>
+        </form>
+
+        <div class="success-msg" [class.visible]="submitted">
+          ✅ Quote request sent! Expect a detailed estimate in your inbox within 24 hours.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

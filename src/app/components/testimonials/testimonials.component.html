@@ -1,0 +1,25 @@
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Client Reviews</span>
+      <h2 class="section-title">What Our<strong> Clients Say</strong></h2>
+      <p class="section-sub">From private owners to fleet operators — they trust Aerolux Aviation.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div
+        *ngFor="let t of testimonials"
+        class="testimonial-card"
+        [class.featured]="t.featured">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"{{ t.text }}"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" [style.background]="t.avatarColor">{{ t.initials }}</div>
+          <div>
+            <div class="author-name">{{ t.name }}</div>
+            <div class="author-detail">{{ t.role }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
