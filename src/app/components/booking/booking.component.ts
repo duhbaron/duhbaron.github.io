@@ -30,12 +30,6 @@ export class BookingComponent {
     }
   ];
 
-  aircraftTypes = [
-    'Single Engine Piston', 'Twin Engine Piston', 'Turboprop',
-    'Light Jet', 'Midsize Jet', 'Heavy Jet / BBJ',
-    'Helicopter', 'Commercial / Regional'
-  ];
-
   packages = [
     'Essential — Exterior Wash & Polish',
     'Signature — Full Exterior Detail',

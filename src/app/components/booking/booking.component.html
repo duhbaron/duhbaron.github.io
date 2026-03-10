@@ -44,12 +44,9 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label>Aircraft Type *</label>
-              <select name="aircraft" required>
-                <option value="">Select type…</option>
-                <option *ngFor="let t of aircraftTypes" [value]="t">{{ t }}</option>
-              </select>
-            </div>
+  <label>Aircraft Type *</label>
+  <input type="text" name="aircraft" placeholder="e.g. Cessna 172, Piper Cherokee, Gulfstream G550..." required />
+</div>
             <div class="form-group">
               <label>Preferred Date</label>
               <input type="date" name="date" [min]="today" />

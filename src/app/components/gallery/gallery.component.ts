@@ -16,6 +16,7 @@ export interface GalleryItem {
   beforeImage?: string;
   afterImage?: string;
   tall?: boolean;
+  small?: boolean;
 }
 
 @Component({
@@ -27,7 +28,8 @@ export interface GalleryItem {
 })
 export class GalleryComponent {
   activeFilter = 'all';
-  sliderPercent = 50;
+  sliderPercents: { [id: number]: number } = {};
+  activeSliderItem: number | null = null;
   isDragging = false;
 
   filters = [
@@ -44,7 +46,16 @@ export class GalleryComponent {
       beforeLabel: 'BEFORE', afterLabel: 'AFTER',
       beforeIcon: '✈', afterIcon: '✈',
       beforeImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1772703750/IMG_2199_dt7nux.jpg',
-      afterImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1772703747/IMG_2223_as8ax2.jpg'
+      afterImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1772703747/IMG_2223_as8ax2.jpg',
+    },
+    {
+      id: 2, category: 'exterior', type: 'before-after', tall: true,
+      title: 'Full Exterior Detail',
+      subtitle: 'Aerolux Aviation Detail',
+      beforeLabel: 'BEFORE', afterLabel: 'AFTER',
+      beforeIcon: '✈', afterIcon: '✈',
+      beforeImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1773105721/IMG_2219_novgeu.jpg',
+      afterImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1773105721/IMG_2211_zocyos.jpg',
     }
   ];
 
@@ -57,40 +68,59 @@ export class GalleryComponent {
     this.activeFilter = key;
   }
 
-  startDrag(event: MouseEvent): void {
-    this.isDragging = true;
-    this.updateSlider(event.clientX, event.currentTarget as HTMLElement);
+  getSliderPercent(id: number): number {
+    return this.sliderPercents[id] ?? 50;
   }
 
-  startDragTouch(event: TouchEvent): void {
+  startDrag(event: MouseEvent, itemId: number): void {
     this.isDragging = true;
-    this.updateSlider(event.touches[0].clientX, event.currentTarget as HTMLElement);
+    this.activeSliderItem = itemId;
+    this.updateSlider(event.clientX, event.currentTarget as HTMLElement, itemId);
+  }
+
+  startDragTouch(event: TouchEvent, itemId: number): void {
+    this.isDragging = true;
+    this.activeSliderItem = itemId;
+    this.updateSlider(event.touches[0].clientX, event.currentTarget as HTMLElement, itemId);
   }
 
   @HostListener('window:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
-    if (!this.isDragging) return;
-    const slider = document.querySelector('.ba-slider') as HTMLElement;
-    if (slider) this.updateSlider(event.clientX, slider);
+    if (!this.isDragging || this.activeSliderItem === null) return;
+    const sliders = document.querySelectorAll('.ba-slider');
+    sliders.forEach(s => {
+      const el = s as HTMLElement;
+      const id = Number(el.getAttribute('data-id'));
+      if (id === this.activeSliderItem) {
+        this.updateSlider(event.clientX, el, id);
+      }
+    });
   }
 
   @HostListener('window:touchmove', ['$event'])
   onTouchMove(event: TouchEvent): void {
-    if (!this.isDragging) return;
-    const slider = document.querySelector('.ba-slider') as HTMLElement;
-    if (slider) this.updateSlider(event.touches[0].clientX, slider);
+    if (!this.isDragging || this.activeSliderItem === null) return;
+    const sliders = document.querySelectorAll('.ba-slider');
+    sliders.forEach(s => {
+      const el = s as HTMLElement;
+      const id = Number(el.getAttribute('data-id'));
+      if (id === this.activeSliderItem) {
+        this.updateSlider(event.touches[0].clientX, el, id);
+      }
+    });
   }
 
   @HostListener('window:mouseup')
   @HostListener('window:touchend')
   stopDrag(): void {
     this.isDragging = false;
+    this.activeSliderItem = null;
   }
 
-  updateSlider(clientX: number, el: HTMLElement): void {
+  updateSlider(clientX: number, el: HTMLElement, itemId: number): void {
     const rect = el.getBoundingClientRect();
     let percent = ((clientX - rect.left) / rect.width) * 100;
     percent = Math.min(Math.max(percent, 2), 98);
-    this.sliderPercent = percent;
+    this.sliderPercents[itemId] = percent;
   }
 }

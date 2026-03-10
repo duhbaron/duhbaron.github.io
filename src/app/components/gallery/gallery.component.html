@@ -17,25 +17,29 @@
     </div>
 
     <div class="gallery-grid">
-      <div
-        *ngFor="let item of filteredItems"
-        class="gallery-item"
-        [class.tall]="item.tall">
+     <div
+  *ngFor="let item of filteredItems"
+  class="gallery-item"
+  [class.tall]="item.tall"
+  [class.small]="item.small">
 
    <ng-container *ngIf="item.type === 'before-after'">
-  <div class="ba-slider" (mousedown)="startDrag($event)" (touchstart)="startDragTouch($event)">
-    <img [src]="item.afterImage" alt="After" class="ba-after-img" />
-    <div class="ba-before" [style.width.%]="sliderPercent">
-      <img [src]="item.beforeImage" alt="Before" class="ba-before-img" />
-    </div>
-    <div class="ba-handle" [style.left.%]="sliderPercent">
-      <div class="ba-handle-line"></div>
-      <div class="ba-handle-circle">↔</div>
-      <div class="ba-handle-line"></div>
-    </div>
-    <div class="ba-label-before">BEFORE</div>
-    <div class="ba-label-after">AFTER</div>
+ <div class="ba-slider"
+  [attr.data-id]="item.id"
+  (mousedown)="startDrag($event, item.id)"
+  (touchstart)="startDragTouch($event, item.id)">
+  <img [src]="item.afterImage" alt="After" class="ba-after-img" />
+  <div class="ba-before" [style.width.%]="getSliderPercent(item.id)">
+    <img [src]="item.beforeImage" alt="Before" class="ba-before-img" />
   </div>
+  <div class="ba-handle" [style.left.%]="getSliderPercent(item.id)">
+    <div class="ba-handle-line"></div>
+    <div class="ba-handle-circle">↔</div>
+    <div class="ba-handle-line"></div>
+  </div>
+  <div class="ba-label-before">BEFORE</div>
+  <div class="ba-label-after">AFTER</div>
+</div>
 </ng-container>
 
         <ng-container *ngIf="item.type === 'solid'">
