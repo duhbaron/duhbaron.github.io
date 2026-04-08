@@ -41,7 +41,7 @@ export class GalleryComponent {
   allItems: GalleryItem[] = [
     {
       id: 1, category: 'exterior', type: 'before-after', tall: true,
-      title: 'Full Exterior Detail',
+      title: 'Beechcraft Baron Exterior Detail',
       subtitle: 'Aerolux Aviation Detail',
       beforeLabel: 'BEFORE', afterLabel: 'AFTER',
       beforeIcon: '✈', afterIcon: '✈',
@@ -50,12 +50,21 @@ export class GalleryComponent {
     },
     {
       id: 2, category: 'exterior', type: 'before-after', tall: true,
-      title: 'Full Exterior Detail',
+      title: 'Beechcraft Baron Exterior Detail',
       subtitle: 'Aerolux Aviation Detail',
       beforeLabel: 'BEFORE', afterLabel: 'AFTER',
       beforeIcon: '✈', afterIcon: '✈',
       beforeImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1773105721/IMG_2219_novgeu.jpg',
       afterImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1773105721/IMG_2211_zocyos.jpg',
+    },
+    {
+      id: 3, category: 'exterior', type: 'before-after', tall: true,
+      title: 'Bel 206-L4 Helicopter Detail',
+      subtitle: 'Aerolux Aviation Detail',
+      beforeLabel: 'BEFORE', afterLabel: 'AFTER',
+      beforeIcon: '✈', afterIcon: '✈',
+      beforeImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/q_auto/f_auto/v1775689151/IMG_3383_hfus6y.jpg',
+      afterImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/q_auto/f_auto/v1775689158/IMG_3403_hxuydi.jpg',
     }
   ];
 
