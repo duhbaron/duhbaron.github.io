@@ -59,7 +59,7 @@ export class GalleryComponent {
     },
     {
       id: 3, category: 'exterior', type: 'before-after', tall: true,
-      title: 'Bel 206-L4 Helicopter Detail',
+      title: 'Bell 206-L4 Helicopter Detail',
       subtitle: 'Aerolux Aviation Detail',
       beforeLabel: 'BEFORE', afterLabel: 'AFTER',
       beforeIcon: '✈', afterIcon: '✈',
