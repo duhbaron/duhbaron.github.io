@@ -42,6 +42,13 @@ export class TestimonialsComponent {
       role: 'Pilot',
       text: 'Met the team at the airport and gave them a chance with our Bel 206-L4 Helicopter. Did not dissapoint. They were professional, efficient, and the helicopter looked amazing after they were done.',
       avatarColor: 'linear-gradient(135deg, #8e44ad, #3498db)'
+    },
+    {
+      initials: 'B',
+      name: 'Brendon',
+      role: 'Pilot/Owner',
+      text: 'Had the team come out to polish my Cessna 172. Looks brand new, they were very professional and easy to work with. Highly recommend.',
+      avatarColor: 'linear-gradient(135deg, #8e44ad, #3498db)'
     }
     
   ];

@@ -65,8 +65,16 @@ export class GalleryComponent {
       beforeIcon: '✈', afterIcon: '✈',
       beforeImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/q_auto/f_auto/v1775689151/IMG_3383_hfus6y.jpg',
       afterImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/q_auto/f_auto/v1775689158/IMG_3403_hxuydi.jpg',
-    }
-  ];
+    },
+    {
+      id: 4, category: 'interior', type: 'before-after', tall: true,
+      title: 'Cessna 172 Brightwork Polish',
+      subtitle: 'Aerolux Aviation Detail',
+      beforeLabel: 'BEFORE', afterLabel: 'AFTER',
+      beforeIcon: '✈', afterIcon: '✈',
+      beforeImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1783634299/4775cb12-5346-4c65-8ade-4be1e37307ba-1_all_94_np6m3u.jpg',
+      afterImage: 'https://res.cloudinary.com/dvunwju7p/image/upload/v1783634300/IMG_5091_lovfk4.jpg',
+  }];
 
   get filteredItems(): GalleryItem[] {
     if (this.activeFilter === 'all') return this.allItems;
